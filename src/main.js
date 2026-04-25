@@ -7,7 +7,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 import store from './store';
 
 const routes = [
-  { path: '/users', component: UserList },
+  // { path: '/', redirect: '/users' },
+  { path: '/users', component: UserList, alias: '/' },
   { path: '/pets', component: PetList }
 ];
 const router = createRouter({
