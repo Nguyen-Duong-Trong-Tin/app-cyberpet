@@ -8,7 +8,7 @@ import NotFound from "./pages/NotFound.vue";
 const routes = [
   // { path: '/', redirect: '/users' },
   { path: '/users', component: UserList, alias: '/' },
-  { path: '/user-detail', component: UserDetail },
+  { path: '/user-detail/:id', component: UserDetail },
   { path: '/pets', component: PetList },
   { path: '/:pathMatch(.*)*', component: NotFound },
 ];
