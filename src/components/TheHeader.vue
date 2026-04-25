@@ -22,9 +22,19 @@ ul {
   list-style: none;
 }
 
-a,
-a:hover {
+a {
+  padding: 10px;
   color: unset;
+}
+
+a:hover {
+  color: red;
   text-decoration: none;
+}
+
+a.active {
+  font-weight: bold;
+  color: red;
+  border-bottom: 2px solid red;
 }
 </style>
