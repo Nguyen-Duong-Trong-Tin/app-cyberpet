@@ -19,11 +19,26 @@ const state = () => {
           "https://pdp.edu.vn/wp-content/uploads/2021/05/hinh-anh-avatar-cho-con-gai-1.jpg",
         typePets: ["Chuột", "Cá"],
       },
-    ]
+    ],
+    userDetail: null
   }
 };
+
+const mutations = {
+  setUserDetail(state, payload) {
+    state.userDetail = state.userList.find(user => user.id === payload);
+  }
+}
+
+const actions = {
+  getUserById(context, payload) {
+    context.commit("setUserDetail", payload);
+  }
+}
 
 export default {
   namespaced: true,
   state,
+  mutations,
+  actions
 }

@@ -2,9 +2,13 @@
   <div class="user-item">
     <h1>{{ user.name }}</h1>
 
-    <span v-for="(typePet, index) in user.typePets" :key="index" class="badge badge-success ml-1">
-      {{ typePet }}
-    </span>
+    <div>
+      <span v-for="(typePet, index) in user.typePets" :key="index" class="badge badge-success ml-1">
+        {{ typePet }}
+      </span>
+    </div>
+
+    <button class="btn btn-primary mt-2" @click="handleNavigateToUserDetail">Detail</button>
   </div>
 </template>
 
@@ -14,6 +18,11 @@ export default {
     user: {
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    handleNavigateToUserDetail() {
+      this.$router.push(`/user-detail/${this.user.id}`);
     }
   }
 }
